@@ -43,7 +43,7 @@ public class SquareTest {
 
 	//@Ignore("This fails with the most obvious rectangle rule. Something is wrong.")
 	@Test
-	public void when_rectangle_width_is_halved_then_its_area_is_halved() {
+	public void when_rectangle_width_is_halved_then_its_area_is_reduced_four_times() {
 		Square square = new Square(INITIAL_DIMENSION);
 		Assert.assertEquals(square.calculateArea(), INITIAL_AREA, DELTA);
 		square.setWidth(INITIAL_DIMENSION / 2);

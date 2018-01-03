@@ -50,6 +50,8 @@ public class GeometryApp {
 		System.out.println("3) Circle");
 		System.out.println("4) Square");
 		System.out.println("5) Triangle");
+		System.out.println("6) Trapezoid");
+
 		System.out.println("0) Back");
 		int option = readInteger();
 
@@ -63,6 +65,8 @@ public class GeometryApp {
 			return createNewSquare();
 		} else if (option == 5) {
 			return createNewTriangle();
+		} else if (option == 6) {
+			return createNewTrapezoid();
 		} else {
 	 		return null;
 		}
@@ -112,6 +116,15 @@ public class GeometryApp {
 			((Triangle) activeShape).setEdgeA(readDouble());
 			((Triangle) activeShape).setEdgeB(readDouble());
 			((Triangle) activeShape).setEdgeC(readDouble());
+		} else if (activeShape instanceof Trapezoid) {
+			System.out.println("Please provide too base trapezoid:");
+			((Trapezoid) activeShape).setBaseA(readDouble());
+			((Trapezoid) activeShape).setBaseB(readDouble());
+			System.out.println("Please provide too leg trapezoid:");
+			((Trapezoid) activeShape).setLegA(readDouble());
+			((Trapezoid) activeShape).setLegB(readDouble());
+			System.out.println("Please provide altitude trapezoid :");
+			((Trapezoid) activeShape).setAltitude(readDouble());
 		}
 
 		System.out.println("Old shape: ");
@@ -134,11 +147,6 @@ public class GeometryApp {
 		return new Ellipse(readDouble(), readDouble());
 	}
 
-	private Rectangle createNewRectangle() {
-		System.out.println("Please provide two edge lengths (height, width):");
-		return new Rectangle(readDouble(), readDouble());
-	}
-
 	private Circle createNewCircle() {
 		System.out.println("Please provide the radius for the circle:");
 		return new Circle(readDouble());
@@ -153,6 +161,23 @@ public class GeometryApp {
 		System.out.println("Please provide three edge lengths:");
 
 		return new Triangle(readDouble(), readDouble(), readDouble());
+	}
+
+	private Rectangle createNewRectangle() {
+		System.out.println("Please provide two edge lengths (height, width):");
+		return new Rectangle(readDouble(), readDouble());
+	}
+
+	private Trapezoid createNewTrapezoid() {
+		System.out.println("Please provide two base");
+		double baseA = readDouble();
+		double baseB = readDouble();
+		System.out.println("Please provide two leg");
+		double legA = readDouble();
+		double legB = readDouble();
+		System.out.println("Please provide altitude");
+		double altitude = readDouble();
+		return new Trapezoid(baseA, baseB, legA, legB, altitude);
 	}
 
 	private Integer readInteger() {
