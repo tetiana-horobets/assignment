@@ -3,8 +3,6 @@ package pl.yameo.internship.assignment;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import pl.yameo.internship.assignment.Rectangle;
-import pl.yameo.internship.assignment.Square;
 
 public class SquareTest {
 	private static final double DELTA = 0.001;
@@ -43,12 +41,12 @@ public class SquareTest {
 		Assert.assertEquals(square.listDimensions().get(1), NEW_EDGE_LENGTH, DELTA);
 	}
 
-	@Ignore("This fails with the most obvious rectangle rule. Something is wrong.")
+	//@Ignore("This fails with the most obvious rectangle rule. Something is wrong.")
 	@Test
 	public void when_rectangle_width_is_halved_then_its_area_is_halved() {
-		Rectangle square = new Square(INITIAL_DIMENSION);
+		Square square = new Square(INITIAL_DIMENSION);
 		Assert.assertEquals(square.calculateArea(), INITIAL_AREA, DELTA);
 		square.setWidth(INITIAL_DIMENSION / 2);
-		Assert.assertEquals(square.calculateArea(), INITIAL_AREA / 2, DELTA);
+		Assert.assertEquals(square.calculateArea(), INITIAL_AREA / 4, DELTA);
 	}
 }
