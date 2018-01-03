@@ -151,6 +151,7 @@ public class GeometryApp {
 
 	private Triangle createNewTriangle() {
 		System.out.println("Please provide three edge lengths:");
+
 		return new Triangle(readDouble(), readDouble(), readDouble());
 	}
 

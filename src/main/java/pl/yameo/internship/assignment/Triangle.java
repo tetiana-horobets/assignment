@@ -13,6 +13,10 @@ public class Triangle implements Shape {
 		this.edgeA = edgeA;
 		this.edgeB = edgeB;
 		this.edgeC = edgeC;
+
+		if (edgeA + edgeB < edgeC || edgeA + edgeC < edgeB || edgeC + edgeB < edgeA){
+			throw new IllegalArgumentException("incorrect length");
+		}
 	}
 
 	@Override
