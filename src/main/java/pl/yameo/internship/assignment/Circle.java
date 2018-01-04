@@ -1,9 +1,16 @@
 package pl.yameo.internship.assignment;
 
-public class Circle extends Ellipse {
-	public Circle(Double radius) {
-		super(radius, radius);
+import java.util.Arrays;
+import java.util.List;
+
+public class Circle implements Shape {
+
+	private double radius;
+
+	public Circle(double radius) {
+		this.radius = radius;
 	}
+
 
 	@Override
 	public String getName() {
@@ -11,17 +18,21 @@ public class Circle extends Ellipse {
 	}
 
 	@Override
-	public void setSemiMajorAxis(Double semiMajorAxis) {
-		setRadius(semiMajorAxis);
+	public List<Double> listDimensions() {
+		return Arrays.asList(radius);
 	}
 
 	@Override
-	public void setSemiMinorAxis(Double semiMinorAxis) {
-		setRadius(semiMinorAxis);
+	public Double calculateArea() {
+		return Math.PI * Math.pow(radius, 2);
 	}
 
-	public void setRadius(Double radius) {
-		super.setSemiMajorAxis(radius);
-		super.setSemiMinorAxis(radius);
+	@Override
+	public Double calculatePerimeter() {
+		return 2.0d * Math.PI * radius;
+	}
+
+	public void setRadius(double radius) {
+		this.radius = radius;
 	}
 }

@@ -8,8 +8,8 @@ public class CircleTest {
     private static final double DELTA = 0.001;
     private static final double INITIAL_DIMENSION = 4.0;
     private static final String SHAPE_NAME = "Circle";
-    private static final double INITIAL_AREA = 25.132741228718345;
-    private static final double INITIAL_PERIMETER = 50.26548245743669;
+    private static final double INITIAL_AREA = 50.26548245743669;
+    private static final double INITIAL_PERIMETER = 25.132741228718345;
 
     @Test
     public void when_trapezoid_created_then_it_has_proper_name() {
