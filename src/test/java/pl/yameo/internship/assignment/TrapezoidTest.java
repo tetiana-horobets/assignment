@@ -15,7 +15,6 @@ public class TrapezoidTest {
     private static final double INITIAL_AREA = 20.0;
     private static final double INITIAL_PERIMETER = 19.0;
 
-
     @Test
     public void when_trapezoid_created_then_it_has_proper_name() {
         Trapezoid trapezoid = new Trapezoid(initialBaseA, initialBaseB, initialLegA, initialLegB, initialAltitude);
@@ -43,4 +42,5 @@ public class TrapezoidTest {
         Trapezoid trapezoid = new Trapezoid(initialBaseA, initialBaseB, initialLegA, initialLegB, initialAltitude);
         Assert.assertEquals(trapezoid.calculatePerimeter(), INITIAL_PERIMETER, DELTA);
     }
+
 }
