@@ -42,5 +42,4 @@ public class TrapezoidTest {
         Trapezoid trapezoid = new Trapezoid(initialBaseA, initialBaseB, initialLegA, initialLegB, initialAltitude);
         Assert.assertEquals(trapezoid.calculatePerimeter(), INITIAL_PERIMETER, DELTA);
     }
-
 }

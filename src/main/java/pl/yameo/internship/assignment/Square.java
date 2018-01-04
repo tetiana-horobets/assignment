@@ -10,31 +10,14 @@ public class Square implements Shape{
 		this.dimension = dimension;
 	}
 
-	@Override
-	public String getName() {
-		return "Square";
-	}
-
-    public void setWidth(double width) {
-        if (width != dimension){
-            this.dimension = width;
-        }
-    }
-
-    public void setHeight(double height) {
-        if (height != dimension){
-            this.dimension = height;
-        }
-    }
-
-    public void setDimension(Double dimension) {
-        setHeight(dimension);
-        setWidth(dimension);
+    @Override
+    public String getName() {
+        return "Square";
     }
 
     @Override
     public List<Double> listDimensions() {
-        return Arrays.asList(dimension, dimension);
+        return Arrays.asList(dimension);
     }
 
     @Override
@@ -45,5 +28,9 @@ public class Square implements Shape{
     @Override
     public Double calculatePerimeter() {
         return dimension * 4;
+    }
+
+    public void setDimension(double dimension) {
+        this.dimension = dimension;
     }
 }

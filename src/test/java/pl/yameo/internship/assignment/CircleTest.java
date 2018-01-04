@@ -34,5 +34,4 @@ public class CircleTest {
         Circle circle = new Circle(INITIAL_DIMENSION);
         Assert.assertEquals(circle.calculatePerimeter(), INITIAL_PERIMETER, DELTA);
     }
-
 }
