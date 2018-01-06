@@ -20,11 +20,6 @@ public class Trapezoid implements Shape {
     }
 
     @Override
-    public String getName() {
-        return "Trapezoid";
-    }
-
-    @Override
     public List<Double> listDimensions() {
         return Arrays.asList(baseA, baseB, legA, legB, altitude);
     }

@@ -12,10 +12,6 @@ public class Rectangle implements Shape {
 		this.width = width;
 	}
 
-	@Override
-	public String getName() {
-		return "Rectangle";
-	}
 
 	@Override
 	public final List<Double> listDimensions() {

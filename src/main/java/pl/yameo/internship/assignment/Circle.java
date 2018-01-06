@@ -11,12 +11,6 @@ public class Circle implements Shape {
 		this.radius = radius;
 	}
 
-
-	@Override
-	public String getName() {
-		return "Circle";
-	}
-
 	@Override
 	public List<Double> listDimensions() {
 		return Arrays.asList(radius);

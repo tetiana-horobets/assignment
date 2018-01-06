@@ -3,6 +3,7 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.yameo.internship.assignment.Factory.FactoryEllipse;
 
 public class EllipseTest {
 
@@ -15,7 +16,7 @@ public class EllipseTest {
 
     @Test
     public void when_trapezoid_created_then_it_has_proper_name() {
-        Ellipse ellipse = new Ellipse(semiMajorAxis, semiMinorAxis);
+        FactoryEllipse ellipse = new FactoryEllipse();
         Assert.assertEquals(ellipse.getName(), SHAPE_NAME);
     }
 

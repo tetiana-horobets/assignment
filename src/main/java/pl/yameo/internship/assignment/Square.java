@@ -11,11 +11,6 @@ public class Square implements Shape{
 	}
 
     @Override
-    public String getName() {
-        return "Square";
-    }
-
-    @Override
     public List<Double> listDimensions() {
         return Arrays.asList(dimension);
     }

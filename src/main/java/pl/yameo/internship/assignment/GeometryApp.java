@@ -1,15 +1,19 @@
 package pl.yameo.internship.assignment;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import pl.yameo.internship.assignment.Factory.*;
+
+import java.util.*;
 
 public class GeometryApp {
 	private Scanner scanner;
 	private List<Shape> shapes = new ArrayList<>();
+    List<FactoryShape> factoryList;
+	List<FactoryShape> addShape = new ArrayList<>();
 
-	public GeometryApp(Scanner scanner) {
+
+	public GeometryApp(Scanner scanner, List<FactoryShape> factoryList) {
 		this.scanner = scanner;
+		this.factoryList = factoryList;
 	}
 
 	public void start() {
@@ -20,6 +24,7 @@ public class GeometryApp {
 	}
 
 	private boolean run() {
+
 		System.out.println("Choose action:");
 		System.out.println("1) Create new shape");
 		System.out.println("2) List existing shapes");
@@ -39,145 +44,61 @@ public class GeometryApp {
 		} else if (option == 3) {
 			modifyShape();
 		}
-
 		return true;
 	}
 
 	private Shape createNewShape() {
 		System.out.println("Choose shape to create:");
-		System.out.println("1) Ellipse");
-		System.out.println("2) Rectangle");
-		System.out.println("3) Circle");
-		System.out.println("4) Square");
-		System.out.println("5) Triangle");
-		System.out.println("6) Trapezoid");
 
+        for(int i = 0; i < factoryList.size(); i++){
+            System.out.println(i+1 + ") " + factoryList.get(i).getName());
+        }
 		System.out.println("0) Back");
 		int option = readInteger();
 
-	 	if (option == 1) {
-			return createNewEllipse();
-		} else if (option == 2) {
-			return createNewRectangle();
-		} else if (option == 3) {
-			return createNewCircle();
-		} else if (option == 4) {
-			return createNewSquare();
-		} else if (option == 5) {
-			return createNewTriangle();
-		} else if (option == 6) {
-			return createNewTrapezoid();
-		} else {
-	 		return null;
-		}
-	}
+		FactoryShape factoryShape;
+        factoryShape = factoryList.get(option - 1);
+        addShape.add(factoryShape);
+        return factoryShape.createNewShape(scanner);
+    }
 
 	private void listShapes() {
 		System.out.println("====== LIST OF SHAPES ======");
-		shapes.forEach(shape -> {
-			System.out.print(shape.getName() + " with dimensions: ");
-			System.out.print(shape.listDimensions() + "; ");
-			System.out.print("Area: " + shape.calculateArea() + "; ");
-			System.out.println("Perimeter: " + shape.calculatePerimeter());
-		});
-		System.out.println("============================");
+		for (int i = 0; i < shapes.size();i++){
+            System.out.print(addShape.get(i).getName() + " with dimensions: ");
+            System.out.print(shapes.get(i).listDimensions() + "; ");
+            System.out.print("Area: " + shapes.get(i).calculateArea() + "; ");
+            System.out.println("Perimeter: " + shapes.get(i).calculatePerimeter());
+        }
 	}
 
 	private void modifyShape() {
 		listShapes();
 		System.out.println("Please choose the index of the shape you want to modify (1-" + shapes.size() + "): ");
 		int index = readInteger();
-		Shape activeShape = shapes.get(index - 1);
-		List<Double> oldDimensions = activeShape.listDimensions();
-		Double oldPerimeter = activeShape.calculatePerimeter();
-		Double oldArea = activeShape.calculateArea();
+		Shape oldShape = shapes.get(index - 1);
+		FactoryShape factory = addShape.get(index - 1);
 
-		System.out.print(activeShape.getName() + " with dimensions: ");
-		System.out.print(oldDimensions + "; ");
-		System.out.print("Area: " + oldArea + "; ");
-		System.out.println("Perimeter: " + oldPerimeter);
+		System.out.print(factory.getName() + " with dimensions: ");
+		System.out.print(oldShape.listDimensions() + "; ");
+		System.out.print("Area: " + oldShape.calculateArea() + "; ");
+		System.out.println("Perimeter: " + oldShape.calculatePerimeter());
 
-		if (activeShape instanceof Ellipse) {
-			System.out.println("Please provide two semi-axis lengths (major, minor):");
-			((Ellipse) activeShape).setSemiMajorAxis(readDouble());
-			((Ellipse) activeShape).setSemiMinorAxis(readDouble());
-		} else if (activeShape instanceof Circle) {
-			System.out.println("Please provide the radius for the circle:");
-			((Circle) activeShape).setRadius(readDouble());
-		} else if (activeShape instanceof Square) {
-			System.out.println("Please provide the edge length:");
-			((Square) activeShape).setDimension(readDouble());
-		} else if (activeShape instanceof Rectangle) {
-			System.out.println("Please provide two edge lengths (height, width):");
-			((Rectangle) activeShape).setHeight(readDouble());
-			((Rectangle) activeShape).setWidth(readDouble());
-		} else if (activeShape instanceof Triangle) {
-			System.out.println("Please provide three edge lengths:");
-			((Triangle) activeShape).setEdgeA(readDouble());
-			((Triangle) activeShape).setEdgeB(readDouble());
-			((Triangle) activeShape).setEdgeC(readDouble());
-		} else if (activeShape instanceof Trapezoid) {
-			System.out.println("Please provide too base trapezoid:");
-			((Trapezoid) activeShape).setBaseA(readDouble());
-			((Trapezoid) activeShape).setBaseB(readDouble());
-			System.out.println("Please provide too leg trapezoid:");
-			((Trapezoid) activeShape).setLegA(readDouble());
-			((Trapezoid) activeShape).setLegB(readDouble());
-			System.out.println("Please provide altitude trapezoid :");
-			((Trapezoid) activeShape).setAltitude(readDouble());
-		}
+		Shape newShape = factory.createNewShape(scanner);
 
 		System.out.println("Old shape: ");
-		System.out.print(activeShape.getName() + " with dimensions: ");
-		System.out.print(oldDimensions + "; ");
-		System.out.print("Area: " + oldArea + "; ");
-		System.out.println("Perimeter: " + oldPerimeter);
+		System.out.print(factory.getName() + " with dimensions: ");
+		System.out.print(oldShape.listDimensions() + "; ");
+		System.out.print("Area: " + oldShape.calculateArea() + "; ");
+		System.out.println("Perimeter: " + oldShape.calculatePerimeter());
 		System.out.println("============================");
 		System.out.println("New shape: ");
-		System.out.print(activeShape.getName() + " with dimensions: ");
-		System.out.print(activeShape.listDimensions() + "; ");
-		System.out.print("Area: " + activeShape.calculateArea() + "; ");
-		System.out.println("Perimeter: " + activeShape.calculatePerimeter());
+		System.out.print(factory.getName() + " with dimensions: ");
+		System.out.print(newShape.listDimensions() + "; ");
+		System.out.print("Area: " + newShape.calculateArea() + "; ");
+		System.out.println("Perimeter: " + newShape.calculatePerimeter());
 		System.out.println("============================");
 
-	}
-
-	private Ellipse createNewEllipse() {
-		System.out.println("Please provide two semi-axis lengths (major, minor):");
-		return new Ellipse(readDouble(), readDouble());
-	}
-
-	private Circle createNewCircle() {
-		System.out.println("Please provide the radius for the circle:");
-		return new Circle(readDouble());
-	}
-
-	private Square createNewSquare() {
-		System.out.println("Please provide the edge length:");
-		return new Square(readDouble());
-	}
-
-	private Triangle createNewTriangle() {
-		System.out.println("Please provide three edge lengths:");
-
-		return new Triangle(readDouble(), readDouble(), readDouble());
-	}
-
-	private Rectangle createNewRectangle() {
-		System.out.println("Please provide two edge lengths (height, width):");
-		return new Rectangle(readDouble(), readDouble());
-	}
-
-	private Trapezoid createNewTrapezoid() {
-		System.out.println("Please provide two base");
-		double baseA = readDouble();
-		double baseB = readDouble();
-		System.out.println("Please provide two leg");
-		double legA = readDouble();
-		double legB = readDouble();
-		System.out.println("Please provide altitude");
-		double altitude = readDouble();
-		return new Trapezoid(baseA, baseB, legA, legB, altitude);
 	}
 
 	private Integer readInteger() {
@@ -185,19 +106,6 @@ public class GeometryApp {
 		while (value == null) {
 			if (scanner.hasNextInt()) {
 				value = scanner.nextInt();
-			} else {
-				scanner.next();
-			}
-		}
-
-		return value;
-	}
-
-	private Double readDouble() {
-		Double value = null;
-		while (value == null) {
-			if (scanner.hasNextDouble()) {
-				value = scanner.nextDouble();
 			} else {
 				scanner.next();
 			}

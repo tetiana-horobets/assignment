@@ -3,6 +3,8 @@ package pl.yameo.internship.assignment;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
+import pl.yameo.internship.assignment.Factory.FactoryTrapezoid;
+import pl.yameo.internship.assignment.Factory.FactoryTriangle;
 import pl.yameo.internship.assignment.Triangle;
 
 public class TriangleTest {
@@ -16,7 +18,7 @@ public class TriangleTest {
 
 	@Test
 	public void when_triangle_created_then_it_has_proper_name() {
-		Triangle triangle = new Triangle(initialEdgeA, initialEdgeB, initialEdgeC);
+		FactoryTriangle triangle = new FactoryTriangle();
 		Assert.assertEquals(triangle.getName(), SHAPE_NAME);
 	}
 

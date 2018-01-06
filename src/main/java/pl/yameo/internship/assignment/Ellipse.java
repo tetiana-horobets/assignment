@@ -13,11 +13,6 @@ public class Ellipse implements Shape {
 	}
 
 	@Override
-	public String getName() {
-		return "Ellipse";
-	}
-
-	@Override
 	public final List<Double> listDimensions() {
 		return Arrays.asList(semiMajorAxis, semiMinorAxis);
 	}

@@ -2,6 +2,7 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.yameo.internship.assignment.Factory.FactoryCircle;
 
 public class CircleTest {
 
@@ -13,7 +14,7 @@ public class CircleTest {
 
     @Test
     public void when_trapezoid_created_then_it_has_proper_name() {
-        Circle circle = new Circle(INITIAL_DIMENSION);
+        FactoryCircle circle = new FactoryCircle();
         Assert.assertEquals(circle.getName(), SHAPE_NAME);
     }
 

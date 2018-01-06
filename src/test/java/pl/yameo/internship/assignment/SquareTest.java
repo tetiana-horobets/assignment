@@ -2,6 +2,8 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.yameo.internship.assignment.Factory.FactoryShape;
+import pl.yameo.internship.assignment.Factory.FactorySqare;
 
 public class SquareTest {
 	private static final double DELTA = 0.001;
@@ -13,7 +15,7 @@ public class SquareTest {
 
 	@Test
 	public void when_square_created_then_it_has_proper_name() {
-		Square square = new Square(INITIAL_DIMENSION);
+		FactoryShape square = new FactorySqare();
 		Assert.assertEquals(square.getName(), SHAPE_NAME);
 	}
 

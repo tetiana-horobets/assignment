@@ -3,6 +3,7 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.yameo.internship.assignment.Factory.FactoryTrapezoid;
 
 public class TrapezoidTest {
     private static final double initialBaseA = 6.0;
@@ -17,7 +18,7 @@ public class TrapezoidTest {
 
     @Test
     public void when_trapezoid_created_then_it_has_proper_name() {
-        Trapezoid trapezoid = new Trapezoid(initialBaseA, initialBaseB, initialLegA, initialLegB, initialAltitude);
+      FactoryTrapezoid trapezoid = new FactoryTrapezoid();
         Assert.assertEquals(trapezoid.getName(), SHAPE_NAME);
     }
 

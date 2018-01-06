@@ -20,11 +20,6 @@ public class Triangle implements Shape {
 	}
 
 	@Override
-	public String getName() {
-		return "Triangle";
-	}
-
-	@Override
 	public final List<Double> listDimensions() {
 		return Arrays.asList(edgeA, edgeB, edgeC);
 	}

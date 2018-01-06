@@ -2,6 +2,7 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.yameo.internship.assignment.Factory.FactoryRectangle;
 
 public class RectangleTest {
 
@@ -14,7 +15,7 @@ public class RectangleTest {
 
     @Test
     public void when_rectangle_created_then_it_has_proper_name() {
-        Rectangle rectangle = new Rectangle(initialHeight, initialWidth);
+        FactoryRectangle rectangle = new FactoryRectangle();
         Assert.assertEquals(rectangle.getName(), SHAPE_NAME);
     }
 
