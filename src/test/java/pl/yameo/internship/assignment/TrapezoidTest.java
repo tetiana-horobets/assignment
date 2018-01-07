@@ -1,9 +1,8 @@
 package pl.yameo.internship.assignment;
 
-
 import org.junit.Assert;
 import org.junit.Test;
-import pl.yameo.internship.assignment.Factory.FactoryTrapezoid;
+import pl.yameo.internship.assignment.Factory.TrapezoidFactory;
 
 public class TrapezoidTest {
     private static final double initialBaseA = 6.0;
@@ -18,18 +17,23 @@ public class TrapezoidTest {
 
     @Test
     public void when_trapezoid_created_then_it_has_proper_name() {
-      FactoryTrapezoid trapezoid = new FactoryTrapezoid();
+      TrapezoidFactory trapezoid = new TrapezoidFactory();
         Assert.assertEquals(trapezoid.getName(), SHAPE_NAME);
     }
 
     @Test
     public void when_trapezoid_is_created_then_proper_dimensions_are_returned() {
         Trapezoid trapezoid = new Trapezoid(initialBaseA, initialBaseB, initialLegA, initialLegB, initialAltitude);
-        Assert.assertEquals(trapezoid.listDimensions().get(0), initialBaseA, 0.0001);
-        Assert.assertEquals(trapezoid.listDimensions().get(1), initialBaseB, 0.0001);
-        Assert.assertEquals(trapezoid.listDimensions().get(2), initialLegA, 0.0001);
-        Assert.assertEquals(trapezoid.listDimensions().get(3), initialLegB, 0.0001);
-        Assert.assertEquals(trapezoid.listDimensions().get(4), initialAltitude, 0.0001);
+        Assert.assertEquals(trapezoid.listDimensions().get(0), initialBaseA, DELTA);
+        Assert.assertEquals(trapezoid.listDimensions().get(1), initialBaseB, DELTA);
+        Assert.assertEquals(trapezoid.listDimensions().get(2), initialLegA, DELTA);
+        Assert.assertEquals(trapezoid.listDimensions().get(3), initialLegB, DELTA);
+        Assert.assertEquals(trapezoid.listDimensions().get(4), initialAltitude, DELTA);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void when_impossible_trapezoid_is_created_then_exception_is_thrown() {
+        new Trapezoid(initialBaseA, 1.0, 1.0, 2.0, initialAltitude);
     }
 
     @Test

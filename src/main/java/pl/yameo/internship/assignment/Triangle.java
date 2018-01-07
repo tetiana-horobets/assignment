@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Triangle implements Shape {
-	private Double edgeA = 0.0;
-	private Double edgeB = 0.0;
-	private Double edgeC = 0.0;
+	private Double edgeA;
+	private Double edgeB;
+	private Double edgeC;
 
 
 	public Triangle(Double edgeA, Double edgeB, Double edgeC) {
@@ -15,7 +15,7 @@ public class Triangle implements Shape {
 		this.edgeC = edgeC;
 
 		if (edgeA + edgeB < edgeC || edgeA + edgeC < edgeB || edgeC + edgeB < edgeA){
-			throw new IllegalArgumentException("incorrect length");
+			throw new IllegalArgumentException("A Triangle With These Dimensions Cannot Exist");
 		}
 	}
 
@@ -27,23 +27,12 @@ public class Triangle implements Shape {
 	@Override
 	public final Double calculateArea() {
 		Double halfPerimeter = calculatePerimeter() / 2;
-		return Math.sqrt(halfPerimeter * (halfPerimeter - edgeA) * (halfPerimeter - edgeB) * (halfPerimeter - edgeC));
+		return Math.sqrt(halfPerimeter * (halfPerimeter - edgeA) * (halfPerimeter - edgeB)
+				* (halfPerimeter - edgeC));
 	}
 
 	@Override
 	public final Double calculatePerimeter() {
 		return edgeA + edgeB + edgeC;
-	}
-
-	public void setEdgeA(Double edgeA) {
-		this.edgeA = edgeA;
-	}
-
-	public void setEdgeB(Double edgeB) {
-		this.edgeB = edgeB;
-	}
-
-	public void setEdgeC(Double edgeC) {
-		this.edgeC = edgeC;
 	}
 }

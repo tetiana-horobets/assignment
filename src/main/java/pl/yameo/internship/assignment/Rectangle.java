@@ -4,14 +4,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Rectangle implements Shape {
-	private Double height = 0.0;
-	private Double width = 0.0;
+	private Double height;
+	private Double width;
 
 	public Rectangle(Double height, Double width) {
 		this.height = height;
 		this.width = width;
 	}
-
 
 	@Override
 	public final List<Double> listDimensions() {
@@ -26,13 +25,5 @@ public class Rectangle implements Shape {
 	@Override
 	public final Double calculatePerimeter() {
 		return 2 * (height + width);
-	}
-
-	public void setHeight(Double height) {
-		this.height = height;
-	}
-
-	public void setWidth(Double width) {
-		this.width = width;
 	}
 }

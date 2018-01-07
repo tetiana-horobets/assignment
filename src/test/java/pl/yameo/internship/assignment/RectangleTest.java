@@ -2,7 +2,7 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pl.yameo.internship.assignment.Factory.FactoryRectangle;
+import pl.yameo.internship.assignment.Factory.RectangleFactory;
 
 public class RectangleTest {
 
@@ -15,15 +15,15 @@ public class RectangleTest {
 
     @Test
     public void when_rectangle_created_then_it_has_proper_name() {
-        FactoryRectangle rectangle = new FactoryRectangle();
+        RectangleFactory rectangle = new RectangleFactory();
         Assert.assertEquals(rectangle.getName(), SHAPE_NAME);
     }
 
     @Test
     public void when_rectangle_is_created_then_proper_dimensions_are_returned() {
         Rectangle rectangle = new Rectangle(initialHeight, initialWidth);
-        Assert.assertEquals(rectangle.listDimensions().get(0), initialHeight, 0.0001);
-        Assert.assertEquals(rectangle.listDimensions().get(1), initialWidth, 0.0001);
+        Assert.assertEquals(rectangle.listDimensions().get(0), initialHeight, DELTA);
+        Assert.assertEquals(rectangle.listDimensions().get(1), initialWidth, DELTA);
     }
 
     @Test

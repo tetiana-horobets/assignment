@@ -1,6 +1,6 @@
 package pl.yameo.internship.assignment;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Square implements Shape{
@@ -12,7 +12,7 @@ public class Square implements Shape{
 
     @Override
     public List<Double> listDimensions() {
-        return Arrays.asList(dimension);
+        return Collections.singletonList(dimension);
     }
 
     @Override
@@ -23,9 +23,5 @@ public class Square implements Shape{
     @Override
     public Double calculatePerimeter() {
         return dimension * 4;
-    }
-
-    public void setDimension(double dimension) {
-        this.dimension = dimension;
     }
 }

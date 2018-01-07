@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Ellipse implements Shape {
-	private Double semiMajorAxis = 0.0;
-	private Double semiMinorAxis = 0.0;
+	private Double semiMajorAxis;
+	private Double semiMinorAxis;
 
 	public Ellipse(Double semiMajorAxis, Double semiMinorAxis) {
 		this.semiMajorAxis = semiMajorAxis;
@@ -19,19 +19,12 @@ public class Ellipse implements Shape {
 
 	@Override
 	public final Double calculateArea() {
-		return Math.PI * (3.0d * (semiMajorAxis + semiMinorAxis) / 2.0d - Math.sqrt(semiMajorAxis * semiMinorAxis));
+		return Math.PI * semiMajorAxis * semiMinorAxis;
 	}
 
 	@Override
 	public final Double calculatePerimeter() {
-		return Math.PI * semiMajorAxis * semiMinorAxis;
-	}
-
-	public void setSemiMajorAxis(Double semiMajorAxis) {
-		this.semiMajorAxis = semiMajorAxis;
-	}
-
-	public void setSemiMinorAxis(Double semiMinorAxis) {
-		this.semiMinorAxis = semiMinorAxis;
+		return Math.PI * (3 * (semiMajorAxis + semiMinorAxis)
+				/ 2 - Math.sqrt(semiMajorAxis * semiMinorAxis));
 	}
 }

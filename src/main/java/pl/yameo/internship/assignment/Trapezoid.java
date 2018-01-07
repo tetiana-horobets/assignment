@@ -17,6 +17,10 @@ public class Trapezoid implements Shape {
         this.legA = legA;
         this.legB = legB;
         this.altitude = altitude;
+
+        if (legA + legB < baseB - baseA || legA + legB < baseA - baseB ){
+            throw new IllegalArgumentException("A Trapezoid With These Dimensions Cannot Exist");
+        }
     }
 
     @Override
@@ -33,25 +37,4 @@ public class Trapezoid implements Shape {
     public Double calculatePerimeter() {
         return baseA + baseB + legA + legB;
     }
-
-    public void setBaseB(Double baseB) {
-        this.baseB = baseB;
-    }
-
-    public void setBaseA(Double baseA) {
-        this.baseA = baseA;
-    }
-
-    public void setLegA(Double legA) {
-        this.legA = legA;
-    }
-
-    public void setLegB(Double legB) {
-        this.legB = legB;
-    }
-
-    public void setAltitude(Double altitude) {
-        this.altitude = altitude;
-    }
 }
-

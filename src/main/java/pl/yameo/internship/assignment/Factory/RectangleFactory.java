@@ -6,7 +6,8 @@ import pl.yameo.internship.assignment.Shape;
 
 import java.util.Scanner;
 
-public class FactoryRectangle implements FactoryShape{
+public class RectangleFactory implements ShapeFactory {
+
     @Override
     public Shape createNewShape(Scanner scanner) {
         System.out.println("Please provide two edge lengths (height, width):");

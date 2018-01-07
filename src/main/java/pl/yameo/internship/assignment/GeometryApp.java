@@ -7,13 +7,12 @@ import java.util.*;
 public class GeometryApp {
 	private Scanner scanner;
 	private List<Shape> shapes = new ArrayList<>();
-    List<FactoryShape> factoryList;
-	List<FactoryShape> addShape = new ArrayList<>();
+    private List<ShapeFactory> allFactories;
+	private List<ShapeFactory> usedFactories = new ArrayList<>();
 
-
-	public GeometryApp(Scanner scanner, List<FactoryShape> factoryList) {
+	GeometryApp(Scanner scanner, List<ShapeFactory> allFactories) {
 		this.scanner = scanner;
-		this.factoryList = factoryList;
+		this.allFactories = allFactories;
 	}
 
 	public void start() {
@@ -24,7 +23,6 @@ public class GeometryApp {
 	}
 
 	private boolean run() {
-
 		System.out.println("Choose action:");
 		System.out.println("1) Create new shape");
 		System.out.println("2) List existing shapes");
@@ -50,22 +48,27 @@ public class GeometryApp {
 	private Shape createNewShape() {
 		System.out.println("Choose shape to create:");
 
-        for(int i = 0; i < factoryList.size(); i++){
-            System.out.println(i+1 + ") " + factoryList.get(i).getName());
+        for(int i = 0; i < allFactories.size(); i++){
+            System.out.println(i+1 + ") " + allFactories.get(i).getName());
         }
 		System.out.println("0) Back");
 		int option = readInteger();
 
-		FactoryShape factoryShape;
-        factoryShape = factoryList.get(option - 1);
-        addShape.add(factoryShape);
-        return factoryShape.createNewShape(scanner);
+		ShapeFactory shapeFactory;
+        shapeFactory = allFactories.get(option - 1);
+        usedFactories.add(shapeFactory);
+        try {
+			return shapeFactory.createNewShape(scanner);
+		} catch (Exception exception) {
+			System.out.println("Invalid value: " + exception.getMessage());
+			return null;
+		}
     }
 
 	private void listShapes() {
 		System.out.println("====== LIST OF SHAPES ======");
 		for (int i = 0; i < shapes.size();i++){
-            System.out.print(addShape.get(i).getName() + " with dimensions: ");
+            System.out.print(usedFactories.get(i).getName() + " with dimensions: ");
             System.out.print(shapes.get(i).listDimensions() + "; ");
             System.out.print("Area: " + shapes.get(i).calculateArea() + "; ");
             System.out.println("Perimeter: " + shapes.get(i).calculatePerimeter());
@@ -77,7 +80,7 @@ public class GeometryApp {
 		System.out.println("Please choose the index of the shape you want to modify (1-" + shapes.size() + "): ");
 		int index = readInteger();
 		Shape oldShape = shapes.get(index - 1);
-		FactoryShape factory = addShape.get(index - 1);
+		ShapeFactory factory = usedFactories.get(index - 1);
 
 		System.out.print(factory.getName() + " with dimensions: ");
 		System.out.print(oldShape.listDimensions() + "; ");
@@ -110,7 +113,6 @@ public class GeometryApp {
 				scanner.next();
 			}
 		}
-
 		return value;
 	}
 }

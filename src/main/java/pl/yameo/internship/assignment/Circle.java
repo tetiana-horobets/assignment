@@ -1,6 +1,6 @@
 package pl.yameo.internship.assignment;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Circle implements Shape {
@@ -13,7 +13,7 @@ public class Circle implements Shape {
 
 	@Override
 	public List<Double> listDimensions() {
-		return Arrays.asList(radius);
+		return Collections.singletonList(radius);
 	}
 
 	@Override
@@ -23,10 +23,6 @@ public class Circle implements Shape {
 
 	@Override
 	public Double calculatePerimeter() {
-		return 2.0d * Math.PI * radius;
-	}
-
-	public void setRadius(double radius) {
-		this.radius = radius;
+		return 2 * Math.PI * radius;
 	}
 }

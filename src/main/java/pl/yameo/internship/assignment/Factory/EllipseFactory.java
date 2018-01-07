@@ -6,7 +6,8 @@ import pl.yameo.internship.assignment.Shape;
 
 import java.util.Scanner;
 
-public class FactoryEllipse implements FactoryShape {
+public class EllipseFactory implements ShapeFactory {
+
     @Override
     public Shape createNewShape(Scanner scanner) {
         System.out.println("Please provide two semi-axis lengths (major, minor):");
