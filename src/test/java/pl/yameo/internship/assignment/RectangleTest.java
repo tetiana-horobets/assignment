@@ -3,7 +3,7 @@ package pl.yameo.internship.assignment;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.yameo.internship.assignment.factory.RectangleFactory;
-import pl.yameo.internship.assignment.geometryShape.Rectangle;
+import pl.yameo.internship.assignment.shape.Rectangle;
 
 public class RectangleTest {
 

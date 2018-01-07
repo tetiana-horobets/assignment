@@ -3,7 +3,7 @@ package pl.yameo.internship.assignment;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.yameo.internship.assignment.factory.TriangleFactory;
-import pl.yameo.internship.assignment.geometryShape.Triangle;
+import pl.yameo.internship.assignment.shape.Triangle;
 
 public class TriangleTest {
 	private static final double DELTA = 0.001;

@@ -1,6 +1,6 @@
 package pl.yameo.internship.assignment.factory;
 
-import pl.yameo.internship.assignment.geometryShape.Circle;
+import pl.yameo.internship.assignment.shape.Circle;
 import pl.yameo.internship.assignment.ScannerUtils;
 import pl.yameo.internship.assignment.Shape;
 

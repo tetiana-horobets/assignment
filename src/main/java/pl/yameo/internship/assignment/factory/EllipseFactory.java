@@ -1,6 +1,6 @@
 package pl.yameo.internship.assignment.factory;
 
-import pl.yameo.internship.assignment.geometryShape.Ellipse;
+import pl.yameo.internship.assignment.shape.Ellipse;
 import pl.yameo.internship.assignment.ScannerUtils;
 import pl.yameo.internship.assignment.Shape;
 

@@ -1,7 +1,7 @@
 package pl.yameo.internship.assignment.factory;
 
 import pl.yameo.internship.assignment.ScannerUtils;
-import pl.yameo.internship.assignment.geometryShape.Rectangle;
+import pl.yameo.internship.assignment.shape.Rectangle;
 import pl.yameo.internship.assignment.Shape;
 
 import java.util.Scanner;

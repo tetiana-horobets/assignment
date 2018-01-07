@@ -3,7 +3,7 @@ package pl.yameo.internship.assignment;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.yameo.internship.assignment.factory.TrapezoidFactory;
-import pl.yameo.internship.assignment.geometryShape.Trapezoid;
+import pl.yameo.internship.assignment.shape.Trapezoid;
 
 public class TrapezoidTest {
     private static final double initialBaseA = 6.0;

@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import pl.yameo.internship.assignment.factory.ShapeFactory;
 import pl.yameo.internship.assignment.factory.SquareFactory;
-import pl.yameo.internship.assignment.geometryShape.Square;
+import pl.yameo.internship.assignment.shape.Square;
 
 public class SquareTest {
 	private static final double DELTA = 0.001;

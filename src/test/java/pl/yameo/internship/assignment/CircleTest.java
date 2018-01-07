@@ -3,7 +3,7 @@ package pl.yameo.internship.assignment;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.yameo.internship.assignment.factory.CircleFactory;
-import pl.yameo.internship.assignment.geometryShape.Circle;
+import pl.yameo.internship.assignment.shape.Circle;
 
 public class CircleTest {
 

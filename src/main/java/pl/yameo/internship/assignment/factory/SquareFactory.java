@@ -2,7 +2,7 @@ package pl.yameo.internship.assignment.factory;
 
 import pl.yameo.internship.assignment.ScannerUtils;
 import pl.yameo.internship.assignment.Shape;
-import pl.yameo.internship.assignment.geometryShape.Square;
+import pl.yameo.internship.assignment.shape.Square;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package pl.yameo.internship.assignment.geometryShape;
+package pl.yameo.internship.assignment.shape;
 
 import pl.yameo.internship.assignment.Shape;
 

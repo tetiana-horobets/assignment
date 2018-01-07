@@ -3,7 +3,7 @@ package pl.yameo.internship.assignment;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.yameo.internship.assignment.factory.EllipseFactory;
-import pl.yameo.internship.assignment.geometryShape.Ellipse;
+import pl.yameo.internship.assignment.shape.Ellipse;
 
 public class EllipseTest {
 
