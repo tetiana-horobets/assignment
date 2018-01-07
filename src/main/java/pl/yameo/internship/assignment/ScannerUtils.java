@@ -8,10 +8,10 @@ public class ScannerUtils {
         while (value == null) {
             if (scanner.hasNextDouble()) {
                 value = scanner.nextDouble();
-                if (value == 0){
+                if (value == 0) {
                     System.out.println("Please enter a value greater than 0");
                     value = null;
-                }else if(value < 0){
+                } else if (value < 0) {
                     System.out.println("Please enter a positive value");
                     value = null;
                 }

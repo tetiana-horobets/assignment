@@ -17,7 +17,7 @@ public class TrapezoidTest {
 
     @Test
     public void when_trapezoid_created_then_it_has_proper_name() {
-      TrapezoidFactory trapezoid = new TrapezoidFactory();
+        TrapezoidFactory trapezoid = new TrapezoidFactory();
         Assert.assertEquals(trapezoid.getName(), SHAPE_NAME);
     }
 
@@ -37,7 +37,7 @@ public class TrapezoidTest {
 
     @Test
     public void when_trapezoid_is_created_then_area_are_returned() {
-        Trapezoid trapezoid = new Trapezoid(initialBaseA,initialBaseB,initialLegA, initialLegB);
+        Trapezoid trapezoid = new Trapezoid(initialBaseA, initialBaseB, initialLegA, initialLegB);
         Assert.assertEquals(trapezoid.calculateArea(), INITIAL_AREA, DELTA);
     }
 

@@ -1,7 +1,5 @@
 package pl.yameo.internship.assignment.shape;
 
-import pl.yameo.internship.assignment.Shape;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class Trapezoid implements Shape {
     @Override
     public Double calculateArea() {
         double partOne = (Math.pow((baseA - baseB), 2)) + (Math.pow(legA, 2)) - (Math.pow(legB, 2));
-        return (baseB + baseA )/ 2 * Math.sqrt(Math.pow(legA, 2) - Math.pow((partOne /(2 * (baseB - baseA))),2));
+        return (baseB + baseA) / 2 * Math.sqrt(Math.pow(legA, 2) - Math.pow((partOne / (2 * (baseB - baseA))), 2));
     }
 
     @Override
