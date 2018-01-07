@@ -1,4 +1,4 @@
-package pl.yameo.internship.assignment.Factory;
+package pl.yameo.internship.assignment.factoryGeometryShape;
 
 import pl.yameo.internship.assignment.Shape;
 import java.util.Scanner;

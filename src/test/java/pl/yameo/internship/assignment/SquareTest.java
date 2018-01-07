@@ -2,8 +2,9 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pl.yameo.internship.assignment.Factory.ShapeFactory;
-import pl.yameo.internship.assignment.Factory.SquareFactory;
+import pl.yameo.internship.assignment.factoryGeometryShape.ShapeFactory;
+import pl.yameo.internship.assignment.factoryGeometryShape.SquareFactory;
+import pl.yameo.internship.assignment.geometryShape.Square;
 
 public class SquareTest {
 	private static final double DELTA = 0.001;

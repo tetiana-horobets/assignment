@@ -1,4 +1,6 @@
-package pl.yameo.internship.assignment;
+package pl.yameo.internship.assignment.geometryShape;
+
+import pl.yameo.internship.assignment.Shape;
 
 import java.util.Collections;
 import java.util.List;

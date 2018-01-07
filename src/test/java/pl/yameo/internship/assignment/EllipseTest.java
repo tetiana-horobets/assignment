@@ -2,7 +2,8 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pl.yameo.internship.assignment.Factory.EllipseFactory;
+import pl.yameo.internship.assignment.factoryGeometryShape.EllipseFactory;
+import pl.yameo.internship.assignment.geometryShape.Ellipse;
 
 public class EllipseTest {
 

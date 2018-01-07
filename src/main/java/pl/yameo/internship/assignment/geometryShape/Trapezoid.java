@@ -1,4 +1,6 @@
-package pl.yameo.internship.assignment;
+package pl.yameo.internship.assignment.geometryShape;
+
+import pl.yameo.internship.assignment.Shape;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,28 +11,27 @@ public class Trapezoid implements Shape {
     private Double baseB;
     private Double legA;
     private Double legB;
-    private Double altitude;
 
-    public Trapezoid(Double baseA, Double baseB, Double legA, Double legB, Double altitude) {
+    public Trapezoid(Double baseA, Double baseB, Double legA, Double legB) {
         this.baseA = baseA;
         this.baseB = baseB;
         this.legA = legA;
         this.legB = legB;
-        this.altitude = altitude;
 
-        if (legA + legB < baseB - baseA || legA + legB < baseA - baseB ){
+        if (legA + legB < baseA - baseB) {
             throw new IllegalArgumentException("A Trapezoid With These Dimensions Cannot Exist");
         }
     }
 
     @Override
     public List<Double> listDimensions() {
-        return Arrays.asList(baseA, baseB, legA, legB, altitude);
+        return Arrays.asList(baseA, baseB, legA, legB);
     }
 
     @Override
     public Double calculateArea() {
-        return 0.5 *(baseA + baseB) * altitude ;
+        double partOne = (Math.pow((baseA - baseB), 2)) + (Math.pow(legA, 2)) - (Math.pow(legB, 2));
+        return (baseB + baseA )/ 2 * Math.sqrt(Math.pow(legA, 2) - Math.pow((partOne /(2 * (baseB - baseA))),2));
     }
 
     @Override
@@ -38,3 +39,4 @@ public class Trapezoid implements Shape {
         return baseA + baseB + legA + legB;
     }
 }
+

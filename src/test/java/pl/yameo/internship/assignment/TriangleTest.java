@@ -2,7 +2,8 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pl.yameo.internship.assignment.Factory.TriangleFactory;
+import pl.yameo.internship.assignment.factoryGeometryShape.TriangleFactory;
+import pl.yameo.internship.assignment.geometryShape.Triangle;
 
 public class TriangleTest {
 	private static final double DELTA = 0.001;

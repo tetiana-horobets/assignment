@@ -1,8 +1,8 @@
-package pl.yameo.internship.assignment.Factory;
+package pl.yameo.internship.assignment.factoryGeometryShape;
 
-import pl.yameo.internship.assignment.ReadDouble;
+import pl.yameo.internship.assignment.ScannerUtils;
 import pl.yameo.internship.assignment.Shape;
-import pl.yameo.internship.assignment.Triangle;
+import pl.yameo.internship.assignment.geometryShape.Triangle;
 
 import java.util.Scanner;
 
@@ -11,8 +11,8 @@ public class TriangleFactory implements ShapeFactory {
     @Override
     public Shape createNewShape(Scanner scanner) {
         System.out.println("Please provide three edge lengths:");
-        return new Triangle(ReadDouble.readDouble(scanner), ReadDouble.readDouble(scanner),
-                ReadDouble.readDouble(scanner));
+        return new Triangle(ScannerUtils.readDouble(scanner), ScannerUtils.readDouble(scanner),
+                ScannerUtils.readDouble(scanner));
     }
 
     @Override

@@ -2,7 +2,7 @@ package pl.yameo.internship.assignment;
 
 import java.util.Scanner;
 
-public class ReadDouble {
+public class ScannerUtils {
     public static Double readDouble(Scanner scanner) {
         Double value = null;
         while (value == null) {
@@ -10,6 +10,9 @@ public class ReadDouble {
                 value = scanner.nextDouble();
                 if (value == 0){
                     System.out.println("Please enter a value greater than 0");
+                    value = null;
+                }else if(value < 0){
+                    System.out.println("Please enter a positive value");
                     value = null;
                 }
             } else {

@@ -1,6 +1,7 @@
 package pl.yameo.internship.assignment;
 
-import pl.yameo.internship.assignment.Factory.*;
+import pl.yameo.internship.assignment.Shape;
+import pl.yameo.internship.assignment.factoryGeometryShape.*;
 
 import java.util.*;
 

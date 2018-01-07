@@ -1,4 +1,6 @@
-package pl.yameo.internship.assignment;
+package pl.yameo.internship.assignment.geometryShape;
+
+import pl.yameo.internship.assignment.Shape;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +16,7 @@ public class Triangle implements Shape {
 		this.edgeB = edgeB;
 		this.edgeC = edgeC;
 
-		if (edgeA + edgeB < edgeC || edgeA + edgeC < edgeB || edgeC + edgeB < edgeA){
+		if (edgeA + edgeB <= edgeC || edgeA + edgeC <= edgeB || edgeC + edgeB <= edgeA){
 			throw new IllegalArgumentException("A Triangle With These Dimensions Cannot Exist");
 		}
 	}

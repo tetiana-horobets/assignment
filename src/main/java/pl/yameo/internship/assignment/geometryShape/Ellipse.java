@@ -1,4 +1,6 @@
-package pl.yameo.internship.assignment;
+package pl.yameo.internship.assignment.geometryShape;
+
+import pl.yameo.internship.assignment.Shape;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +12,10 @@ public class Ellipse implements Shape {
 	public Ellipse(Double semiMajorAxis, Double semiMinorAxis) {
 		this.semiMajorAxis = semiMajorAxis;
 		this.semiMinorAxis = semiMinorAxis;
+
+		if (semiMajorAxis < semiMinorAxis){
+			throw new IllegalArgumentException("Major axis can’t be less than minor");
+		}
 	}
 
 	@Override
