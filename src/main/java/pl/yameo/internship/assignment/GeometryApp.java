@@ -79,9 +79,13 @@ public class GeometryApp {
 		listShapes();
 		System.out.println("Please choose the index of the shape you want to modify (1-" + shapes.size() + "): ");
 		int index = readInteger();
+		if (index > shapes.size()){
+			System.out.println("Invalid option");
+			run();
+			return;
+			}
 		Shape oldShape = shapes.get(index - 1);
 		ShapeFactory factory = usedFactories.get(index - 1);
-
 		System.out.print(factory.getName() + " with dimensions: ");
 		System.out.print(oldShape.listDimensions() + "; ");
 		System.out.print("Area: " + oldShape.calculateArea() + "; ");
