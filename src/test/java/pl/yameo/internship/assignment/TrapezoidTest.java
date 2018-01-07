@@ -1,9 +1,8 @@
 package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
-import pl.yameo.internship.assignment.factoryGeometryShape.TrapezoidFactory;
+import pl.yameo.internship.assignment.factory.TrapezoidFactory;
 import pl.yameo.internship.assignment.geometryShape.Trapezoid;
 
 public class TrapezoidTest {

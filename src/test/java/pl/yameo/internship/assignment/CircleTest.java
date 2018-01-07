@@ -2,10 +2,8 @@ package pl.yameo.internship.assignment;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pl.yameo.internship.assignment.factoryGeometryShape.CircleFactory;
+import pl.yameo.internship.assignment.factory.CircleFactory;
 import pl.yameo.internship.assignment.geometryShape.Circle;
-
-import java.util.Scanner;
 
 public class CircleTest {
 
