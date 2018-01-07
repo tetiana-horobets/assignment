@@ -88,6 +88,8 @@ public class GeometryApp {
 		System.out.println("Perimeter: " + oldShape.calculatePerimeter());
 
 		Shape newShape = factory.createNewShape(scanner);
+		shapes.remove(index -1 );
+		shapes.add(index - 1, newShape);
 
 		System.out.println("Old shape: ");
 		System.out.print(factory.getName() + " with dimensions: ");
