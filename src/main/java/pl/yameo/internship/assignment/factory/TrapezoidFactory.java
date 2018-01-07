@@ -16,10 +16,10 @@ public class TrapezoidFactory implements ShapeFactory {
         System.out.println("Please provide shorter base");
         double baseB = ScannerUtils.readDouble(scanner);
 
-        System.out.println("Please provide longer leg");
+        System.out.println("Please provide first leg");
         double legA = ScannerUtils.readDouble(scanner);
 
-        System.out.println("Please provide shorter leg");
+        System.out.println("Please provide second leg");
         double legB = ScannerUtils.readDouble(scanner);
 
         return new Trapezoid(baseA, baseB, legA, legB);
